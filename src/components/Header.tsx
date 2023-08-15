@@ -1,13 +1,17 @@
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useState } from "react";
 import { styled } from "styled-components";
 
-const Nav = styled.nav<{ bar: string }>`
+const Container = styled(motion.div)<{ mousehover: string }>`
   position: fixed;
   width: 100%;
-  z-index: 100;
+  z-index: 10;
   top: 0;
   left: 0;
+  background: ${(props) => (props.mousehover === "" ? null : "#fff")};
+`;
+const Nav = styled.nav`
+  z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +19,6 @@ const Nav = styled.nav<{ bar: string }>`
   padding: 0 30px;
   height: 80px;
   white-space: nowrap;
-  background: ${(props) => (props.bar === "" ? null : "#fff")};
   @media (max-width: 1024px) {
     font-size: 13px;
     height: 64px;
@@ -26,6 +29,16 @@ const Nav = styled.nav<{ bar: string }>`
     padding: 15px;
     /* 우측 아이콘 버튼들 */
   }
+`;
+// 헤더 상단 y스크롤 진행현황 바
+const YbarWrap = styled.div`
+  width: 100%;
+  top: 0;
+  left: 0;
+`;
+const Ybar = styled(motion.div)`
+  height: 4px;
+  background: #007fa8;
 `;
 // 컨텐츠 영역
 const InnerWrap = styled.div`
@@ -77,7 +90,6 @@ const Bar = styled(motion.div)`
 `;
 const Black = styled.div`
   z-index: 9;
-  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -199,10 +211,19 @@ const Header = () => {
     setBarLocation(location);
     console.log(location);
   };
-  const { scrollYProgress } = useScroll();
+  const { scrollY, scrollYProgress } = useScroll();
+  // 헤더 상단 페이지 진행상황 바 Ybar의 width
+  const width = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  // Nav의 배경화면 맨 상단에서만 투명하게 함
+
+  const background = useTransform(scrollY, [0, 1], ["", "hsla(0,0%,100%,.9)"]);
+  const backdropFilter = useTransform(scrollY, [0, 1], ["", "blur(5px)"]);
   return (
-    <>
-      <Nav bar={barLocation}>
+    <Container style={{ background, backdropFilter }} mousehover={barLocation}>
+      <YbarWrap>
+        <Ybar style={{ width }}></Ybar>
+      </YbarWrap>
+      <Nav>
         <InnerWrap>
           <Logo>
             <svg
@@ -350,7 +371,7 @@ const Header = () => {
           }}
         ></Black>
       )}
-    </>
+    </Container>
   );
 };
 
