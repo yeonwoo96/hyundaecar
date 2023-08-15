@@ -340,7 +340,7 @@ const Header = () => {
                     barMove("shop");
                   }}
                 >
-                  <img src="/public/images/hyundai_shop_logo.png"></img>
+                  <img src="/images/hyundai_shop_logo.png"></img>
                   {barLocation === "shop" && (
                     <Bar className="bar" layoutId="bar" />
                   )}
