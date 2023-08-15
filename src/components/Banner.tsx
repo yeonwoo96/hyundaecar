@@ -161,7 +161,10 @@ const Banner = () => {
                   <Title className="h3">{i.title}</Title>
                   <Des className="h4">{i.description}</Des>
                 </TextBox>
-                <Car src={`public/images/${i.Car}.png`} variants={CarVar}></Car>
+                <Car
+                  src={`/public/images/${i.Car}.png`}
+                  variants={CarVar}
+                ></Car>
               </CarBox>
             )
         )}
