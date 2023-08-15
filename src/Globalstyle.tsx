@@ -47,4 +47,21 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+.h1{}
+.h2{}
+.h3{font-size:72px;
+	@media (max-width:1024px) {
+		font-size: 42px;
+	}
+	@media (max-width:768px) {
+		font-size: 8.35vw;
+	}
+}
+.h4{font-size:26px;
+	@media (max-width:1024px) {
+		font-size: 20px;
+	}
+	@media (max-width:768px) {
+		font-size: 5vw;
+	}}
 `;
