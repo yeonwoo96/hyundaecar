@@ -29,7 +29,7 @@ const CarBox = styled(motion.div)`
 `;
 const CarBoxVar = {
   initial: {
-    x: "80vw",
+    x: "100vw",
   },
   animate: {
     x: 0,
@@ -38,7 +38,7 @@ const CarBoxVar = {
     },
   },
   exit: {
-    x: "-80vw",
+    x: "-100vw",
     transition: {
       duration: 0.5,
     },
@@ -88,8 +88,10 @@ const Button = styled.button`
   &.rbtn {
     right: 0;
   }
-  @media (max-width: 767px) {
-    font-size: 3vw;
+  &.btn {
+    @media (max-width: 767px) {
+      font-size: 3vw;
+    }
   }
 `;
 // 배너 Index 원
@@ -167,12 +169,12 @@ const Banner = () => {
         )}
       </AnimatePresence>
 
-      <Button onClick={downClick} className="lbtn h4">
+      <Button onClick={downClick} className="btn lbtn h4">
         {`<${
           visible !== 0 ? Cars[visible - 1].title : Cars[Cars.length - 1].title
         }`}
       </Button>
-      <Button onClick={upClick} className="rbtn h4">
+      <Button onClick={upClick} className="btn rbtn h4">
         {`${
           visible !== Cars.length - 1 ? Cars[visible + 1].title : Cars[0].title
         }>`}
