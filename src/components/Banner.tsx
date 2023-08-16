@@ -27,6 +27,7 @@ const CarBox = styled(motion.div)`
   justify-content: center;
   align-items: center;
 `;
+// 배너 각 페이지
 const CarBoxVar = {
   initial: {
     x: "100vw",
@@ -53,6 +54,7 @@ const Title = styled.p`
   margin-bottom: 24px;
 `;
 const Des = styled.p``;
+// 자동차 이미지
 const Car = styled(motion.img)`
   position: relative;
   z-index: 1;
@@ -66,6 +68,7 @@ const Car = styled(motion.img)`
     top: 16vw;
   }
 `;
+// 자동차 이미지 variants
 const CarVar = {
   initial: {
     x: "80vw",
@@ -131,7 +134,9 @@ const Banner = () => {
       description: "case by CASPER",
     },
   ];
+  // 페이지 index
   const [visible, setVisible] = useState(0);
+  // 페이지 이동 클릭 이벤트
   const upClick = () => {
     if (visible === Cars.length - 1) {
       setVisible(0);
