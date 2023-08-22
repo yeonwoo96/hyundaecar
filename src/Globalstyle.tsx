@@ -29,7 +29,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	font-size: 16px;
+	font-size: 14px;
 	font-family: 'Noto Sans KR', sans-serif;
 }
 ol, ul {
@@ -47,15 +47,27 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-.h1{}
-.h2{}
-.h3{font-size:72px;
+.h1{font-size:72px;
 	@media (max-width:1024px) {
 		font-size: 42px;
 	}
 	@media (max-width:768px) {
 		font-size: 8.35vw;
+	}}
+.h2{@media (min-width:767px) {
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 58px;
+    letter-spacing: -.4px;
 	}
+	@media (max-width:767px) {
+		   font-size: 27px;
+    font-weight: 600;
+    line-height: 35px;
+    letter-spacing: -.4px;
+	}}
+.h3{font-size:40px;
+	font-weight: 600;
 }
 .h4{font-size:26px;
 	@media (max-width:1024px) {
