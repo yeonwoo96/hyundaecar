@@ -70,6 +70,7 @@ table {
 	font-weight: 600;
 }
 .h4{font-size:26px;
+	
 	@media (max-width:1024px) {
 		font-size: 20px;
 	}

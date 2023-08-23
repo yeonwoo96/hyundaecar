@@ -1,19 +1,21 @@
 import { styled } from "styled-components";
 import Banner from "../components/Banner";
 import Model from "./HomeSection/Model";
+import Electric from "./HomeSection/electric";
+import MyHyundai from "./HomeSection/MyHyundai";
+import Brand from "./HomeSection/Brand";
+import Events from "./HomeSection/Event";
 
-const Container = styled.section`
-  height: 200vh;
-`;
+const Container = styled.section``;
 const Home = () => {
   return (
     <Container>
       <Banner />
       <Model />
-      {/* <Electric/>
-      <MyHyundae/>
-      <Brand/>
-      <Event/> */}
+      <Electric />
+      <MyHyundai />
+      <Brand />
+      <Events />
     </Container>
   );
 };

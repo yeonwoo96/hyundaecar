@@ -9,6 +9,9 @@ const Container = styled.section`
   @media (max-width: 1199px) {
     box-sizing: border-box;
     padding: 140px 32px 0;
+    .hide-1200 {
+      display: none;
+    }
   }
 `;
 const Title = styled.p`
@@ -19,12 +22,12 @@ const Des = styled.p`
   color: ${(props) => props.theme.gray};
   text-align: center;
   margin-top: 30px;
+  margin-bottom: 40px;
+  font-size: 16px;
 `;
 const Wrapper = styled.ul`
   margin: auto;
-  margin-top: 40px;
   max-width: 1120px;
-  height: 432px;
   display: grid;
   @media (min-width: 1200px) {
     grid-template-columns: 2fr 1fr 1fr;
@@ -126,13 +129,13 @@ const Model = () => {
         </li>
         <li>
           <TextBox>
-            <AgeBox select={select}>
+            <AgeBox select={select} className="hide-1200">
               <li onClick={() => setSelect(1)}>전체</li>
               <li onClick={() => setSelect(2)}>2~30대</li>
               <li onClick={() => setSelect(3)}>40대</li>
               <li onClick={() => setSelect(4)}>50대</li>
             </AgeBox>
-            <NO1 className="h3">1위. 디 올 뉴 그랜저 Hybrid</NO1>
+            <NO1 className="h3 hide-1200">1위. 디 올 뉴 그랜저 Hybrid</NO1>
           </TextBox>
           <ImgBox>
             <img src="/images/ranking/ranking2.jpg"></img>
