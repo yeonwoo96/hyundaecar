@@ -28,7 +28,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 1.4;
 	font-size: 14px;
 	font-family: 'Noto Sans KR', sans-serif;
 }
@@ -77,4 +77,10 @@ table {
 	@media (max-width:768px) {
 		font-size: 5vw;
 	}}
+	button{
+		cursor: pointer;
+	}
+.gray{
+	color:#666666;
+}
 `;

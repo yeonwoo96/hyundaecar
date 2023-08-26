@@ -50,6 +50,7 @@ const TextBox = styled.div`
     margin-bottom: 60px;
   }
   .detail-btn {
+    cursor: pointer;
     background: ${(props) => props.theme.blue};
     padding: 14px;
     box-sizing: border-box;

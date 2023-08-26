@@ -14,8 +14,8 @@ const Home = () => {
       <Model />
       <Electric />
       <MyHyundai />
-      <Brand />
       <Events />
+      <Brand />
     </Container>
   );
 };

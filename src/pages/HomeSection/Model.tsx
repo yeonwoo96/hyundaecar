@@ -74,6 +74,7 @@ const AgeBox = styled.ul<{ select: number }>`
     color: ${(props) => props.theme.skyblue};
   }
   li {
+    cursor: pointer;
     text-align: center;
     &::after {
       content: " | ";
