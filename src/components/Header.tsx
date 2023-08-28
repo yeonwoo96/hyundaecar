@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState } from "react";
 import { styled } from "styled-components";
-
+import { useNavigate } from "react-router-dom";
 const Container = styled(motion.div)<{ mousehover: string }>`
   position: fixed;
   width: 100%;
@@ -208,6 +208,7 @@ const Line = styled.li`
 // const Svg = styled.svg``;
 // const Path = styled.path``;
 const Header = () => {
+  const navigate = useNavigate();
   const [barLocation, setBarLocation] = useState("");
   const barMove = (location: string) => {
     setBarLocation(location);
@@ -289,6 +290,7 @@ const Header = () => {
                   onMouseOver={() => {
                     barMove("model");
                   }}
+                  onClick={() => navigate("")}
                 >
                   모델
                   {barLocation === "model" && (
@@ -299,6 +301,7 @@ const Header = () => {
                   onMouseOver={() => {
                     barMove("purchase");
                   }}
+                  onClick={() => navigate("/Purchase")}
                 >
                   구매/이벤트
                   {barLocation === "purchase" && (
@@ -309,6 +312,7 @@ const Header = () => {
                   onMouseOver={() => {
                     barMove("service");
                   }}
+                  onClick={() => navigate("/Service")}
                 >
                   서비스/멤버십
                   {barLocation === "service" && (
@@ -319,6 +323,7 @@ const Header = () => {
                   onMouseOver={() => {
                     barMove("digital");
                   }}
+                  onClick={() => navigate("/Digital")}
                 >
                   디지털/고객지원
                   {barLocation === "digital" && (
@@ -329,6 +334,7 @@ const Header = () => {
                   onMouseOver={() => {
                     barMove("brand");
                   }}
+                  onClick={() => navigate("/BrandPage")}
                 >
                   브랜드
                   {barLocation === "brand" && (
@@ -339,6 +345,7 @@ const Header = () => {
                   onMouseOver={() => {
                     barMove("shop");
                   }}
+                  onClick={() => navigate("/Shop")}
                 >
                   <img src="/images/hyundai_shop_logo.png"></img>
                   {barLocation === "shop" && (

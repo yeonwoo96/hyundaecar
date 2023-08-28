@@ -41,6 +41,9 @@ const Contents1 = styled.div`
     grid-template-columns: repeat(2, 1fr);
     font-size: 14px;
     gap: 8px 0;
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
     li {
       span {
         cursor: pointer;
