@@ -184,7 +184,7 @@ const Brand = () => {
       <Wrapper>
         <Slide page={Slidepage}>
           {Items.map((i) => (
-            <Item>
+            <Item key={i.title}>
               <img
                 src={
                   windowSize.width > 1023 ? `${i.img}.jpg` : `${i.img}.1.jpg`

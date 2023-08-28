@@ -171,6 +171,9 @@ const UtilLi = styled.li`
       height: 20px;
     }
   }
+  .hamburger {
+    cursor: pointer;
+  }
   .mypage {
     background: url("public/images/w_mypage.png") center;
     background-size: cover;
@@ -204,10 +207,33 @@ const Line = styled.li`
   height: 0.9em;
   background: #999;
 `;
-
+const HamOnMenu = styled.div<{ ison: string }>`
+  top: 0;
+  position: fixed;
+  transition: transform 1s ease-in-out;
+  transform: translateX(${(props) => (props.ison === "true" ? 0 : "100%")});
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100vw;
+  height: 100vh;
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  ul {
+    display: flex;
+    flex-flow: column;
+    gap: 1em;
+    align-items: center;
+  }
+`;
 // const Svg = styled.svg``;
 // const Path = styled.path``;
 const Header = () => {
+  const [HamOn, setHamOn] = useState(false);
   const navigate = useNavigate();
   const [barLocation, setBarLocation] = useState("");
   const barMove = (location: string) => {
@@ -367,7 +393,10 @@ const Header = () => {
                     <button className="rbtn search"></button>
                   </UtilLi>
                   <UtilLi>
-                    <button className="rbtn menu">
+                    <button
+                      className="rbtn menu hamburger"
+                      onClick={() => setHamOn((cur) => !cur)}
+                    >
                       <div></div>
                       <div></div>
                       <div></div>
@@ -378,6 +407,16 @@ const Header = () => {
             </Menu>
           </InnerWrap>
         </Nav>
+        <HamOnMenu ison={HamOn.toString()}>
+          <ul className="h3" onClick={() => setHamOn(false)}>
+            <li onClick={() => navigate("")}>모델</li>
+            <li onClick={() => navigate("/Purchase")}>구매/이벤트</li>
+            <li onClick={() => navigate("/Service")}>서비스/멤버십</li>
+            <li onClick={() => navigate("/Digital")}>디지털/고객지원</li>
+            <li onClick={() => navigate("/BrandPage")}>브랜드</li>
+            <li onClick={() => navigate("/Shop")}>샵</li>
+          </ul>
+        </HamOnMenu>
       </Container>
       {barLocation !== "" && (
         <Black

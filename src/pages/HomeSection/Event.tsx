@@ -190,7 +190,7 @@ const Events = () => {
       <Wrapper>
         <Slide page={Slidepage}>
           {SlideContents.map((item) => (
-            <Item>
+            <Item key={item.title}>
               <img src={item.img}></img>
               <h4 className="h4">{item.title}</h4>
               <p className="des gray">{item.des}</p>
