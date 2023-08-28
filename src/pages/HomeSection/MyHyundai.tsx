@@ -123,7 +123,7 @@ const App = styled.div`
   padding: 33px 0 0 40px;
   text-align: left;
   background-color: #f6f3f2;
-  background: url("public/images/myhundai/re_hyundaishop_app.png") no-repeat;
+  background: url("/images/myhundai/re_hyundaishop_app.png") no-repeat;
   background-position: 80% 90%;
   .h4 {
     font-weight: 600;
@@ -205,22 +205,22 @@ const MyHyundai = () => {
     {
       title: "홈",
       des: "보유 차량 정보에 따른 맞춤 정보형 UI 통해 제공",
-      bg: "public/images/myhundai/main_myhyundai_home.jpg",
+      bg: "/images/myhundai/main_myhyundai_home.jpg",
     },
     {
       title: "차고",
       des: "차량정보 및 유지비 관리를 포함한 쉬운 차량 관리",
-      bg: "public/images/myhundai/main_myhyundai_garage.jpg",
+      bg: "/images/myhundai/main_myhyundai_garage.jpg",
     },
     {
       title: "Shop",
       des: "마이현대 대표 커머스 현대Shop과의 연계",
-      bg: "public/images/myhundai/main_myhyundai_shop.jpg",
+      bg: "/images/myhundai/main_myhyundai_shop.jpg",
     },
     {
       title: "서비스",
       des: "정비를 포함한 다양한 차량 관련 서비스",
-      bg: "public/images/myhundai/main_myhyundai_service.jpg",
+      bg: "/images/myhundai/main_myhyundai_service.jpg",
     },
   ];
   const [SlidePage, setSlidePage] = useState(0);

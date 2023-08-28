@@ -55,8 +55,41 @@ const Slide = styled.div<{ page: number }>`
   }
 `;
 const Item = styled.div`
+  position: relative;
   img {
     width: 100%;
+  }
+  &:hover {
+    .HoverText {
+      opacity: 1;
+    }
+  }
+`;
+const HoverText = styled.div`
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  gap: 1rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  .h4 {
+    font-weight: 600;
+  }
+  @media (max-width: 1023px) {
+    position: relative;
+    background: none;
+    margin-top: 20px;
+    height: auto;
+    color: #111;
+    opacity: 1;
+    top: auto;
   }
 `;
 const Btn = styled.button`
@@ -126,18 +159,18 @@ const Brand = () => {
     },
     {
       img: "/images/brands/2",
-      title: "엔터테인먼트",
-      des: "스파이더 속 아이오닉을 만나보세요",
+      title: "현대 리유니온",
+      des: "포니 쿠페 콘셉트 복원 프로젝트",
     },
     {
       img: "/images/brands/3",
-      title: "엔터테인먼트",
-      des: "스파이더 속 아이오닉을 만나보세요",
+      title: "Re:Style 2023",
+      des: "지속 가능한 삶의 미래를 그리다",
     },
     {
       img: "/images/brands/4",
-      title: "엔터테인먼트",
-      des: "스파이더 속 아이오닉을 만나보세요",
+      title: "로보틱스",
+      des: "당신을 향한 모빌리티",
     },
   ];
 
@@ -157,6 +190,10 @@ const Brand = () => {
                   windowSize.width > 1023 ? `${i.img}.jpg` : `${i.img}.1.jpg`
                 }
               ></img>
+              <HoverText className="HoverText">
+                <h4 className="h4">{i.title}</h4>
+                <p>{i.des}</p>
+              </HoverText>
             </Item>
           ))}
         </Slide>
