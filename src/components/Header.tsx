@@ -32,6 +32,7 @@ const Nav = styled.nav`
 `;
 // 헤더 상단 y스크롤 진행현황 바
 const YbarWrap = styled.div`
+  position: absolute;
   width: 100%;
   top: 0;
   left: 0;
@@ -338,7 +339,7 @@ const Header = () => {
                   onMouseOver={() => {
                     barMove("service");
                   }}
-                  onClick={() => navigate("/Service")}
+                  onClick={() => navigate("/Service/story")}
                 >
                   서비스/멤버십
                   {barLocation === "service" && (

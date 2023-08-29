@@ -7,6 +7,8 @@ import Service from "./pages/service";
 import Digital from "./pages/Digital";
 import BrandPage from "./pages/BrandPage";
 import Shop from "./pages/Shop";
+import Story from "./pages/ServiceSection/Story";
+import History from "./pages/ServiceSection/History";
 
 function App() {
   return (
@@ -16,7 +18,10 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/Purchase" element={<Purchase />}></Route>
         {/* 구매 이벤트 */}
-        <Route path="/Service" element={<Service />}></Route>
+        <Route path="/Service/:id" element={<Service />}>
+          <Route path="history" element={<History />}></Route>
+          <Route path="story" element={<Story />}></Route>
+        </Route>
         {/* 서비스 멤버십 */}
         <Route path="/Digital" element={<Digital />}></Route>
         {/*  디지털*/}
