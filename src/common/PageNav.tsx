@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 const Container = styled.div`
   width: 100%;
 
-  background: url("public/images/common/common-ht01-background-cloud-image-w.jpg");
+  background: url("/images/common/common-ht01-background-cloud-image-w.jpg");
   margin-top: 80px;
   @media (max-width: 1024px) {
     margin-top: 64px;
