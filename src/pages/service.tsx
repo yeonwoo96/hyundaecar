@@ -29,6 +29,13 @@ const LinkWrap = styled.div<{ param: string | undefined }>`
     }
   }
 `;
+const Bot = styled.div`
+  margin: auto;
+  margin-top: 100px;
+  max-width: 1120px;
+  display: flex;
+  justify-content: space-between;
+`;
 const Service = () => {
   const param = useParams();
   console.log(param.id);
@@ -55,7 +62,17 @@ const Service = () => {
       ) : (
         <h2 className="h2">잘못된 링크입니다.</h2>
       )}
-      <h1>gdgd</h1>
+      <Bot>
+        <div>
+          <img src="/images/members/bluemembers-linkbanner04-pc.png"></img>
+        </div>
+        <div>
+          <img src="/images/members/bluemembers-linkbanner02-01-pc.png"></img>
+        </div>
+        <div>
+          <img src="/images/members/bluemembers-linkbanner03-pc.png"></img>
+        </div>
+      </Bot>
     </div>
   );
 };

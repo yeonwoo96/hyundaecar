@@ -412,7 +412,7 @@ const Header = () => {
           <ul className="h3" onClick={() => setHamOn(false)}>
             <li onClick={() => navigate("")}>모델</li>
             <li onClick={() => navigate("/Purchase")}>구매/이벤트</li>
-            <li onClick={() => navigate("/Service")}>서비스/멤버십</li>
+            <li onClick={() => navigate("/Service/story")}>서비스/멤버십</li>
             <li onClick={() => navigate("/Digital")}>디지털/고객지원</li>
             <li onClick={() => navigate("/BrandPage")}>브랜드</li>
             <li onClick={() => navigate("/Shop")}>샵</li>
