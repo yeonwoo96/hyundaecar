@@ -31,6 +31,7 @@ body {
 	line-height: 1.4;
 	font-size: 14px;
 	font-family: 'Noto Sans KR', sans-serif;
+	overflow-x: hidden;
 }
 ol, ul {
 	list-style: none;
@@ -84,5 +85,9 @@ table {
 	color:#666666;
 }
 .h5{font-size:16px;
+}
+html,body{
+	width: 100%;
+	overflow-x: hidden;
 }
 `;

@@ -409,8 +409,8 @@ const Header = () => {
             </Menu>
           </InnerWrap>
         </Nav>
-        <HamOnMenu ison={HamOn.toString()} onClick={() => setHamOn(false)}>
-          <ul className="h3">
+        <HamOnMenu ison={HamOn.toString()}>
+          <ul className="h3" onClick={() => setHamOn(false)}>
             <li onClick={() => navigate("")}>모델</li>
             <li onClick={() => navigate("/Purchase")}>구매/이벤트</li>
             <li onClick={() => navigate("/Service/story")}>서비스/멤버십</li>

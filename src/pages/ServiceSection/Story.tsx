@@ -14,6 +14,9 @@ const BlueStory = styled.div`
   h4 {
     margin-bottom: 30px;
   }
+  @media (max-width: 768px) {
+    padding: 0 30px;
+  }
 `;
 const BlueMembers = styled.div`
   margin-top: 100px;
@@ -24,6 +27,12 @@ const BlueMembers = styled.div`
   text-align: center;
   img {
     margin-bottom: 30px;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+  @media (max-width: 768px) {
+    padding: 0 30px;
   }
 `;
 const GrayDiv = styled.div`
@@ -36,8 +45,8 @@ const GrayDiv = styled.div`
     padding: 30px;
     border: 1px solid #e4dcd3;
     max-width: 1120px;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 250px 1fr;
     ul {
       li {
         &::before {
@@ -64,6 +73,15 @@ const GrayDiv = styled.div`
         color: #fff;
         padding: 14px;
         font-size: 14px;
+      }
+    }
+    @media (max-width: 768px) {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      text-align: center;
+      .textDiv {
+        margin-left: 0;
       }
     }
   }
