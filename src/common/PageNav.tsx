@@ -20,14 +20,25 @@ const NavWrapper = styled.div`
   font-size: 12px;
   height: auto;
   .nav {
+    box-sizing: border-box;
     padding: 30px 0;
+    @media (max-width: 1180px) {
+      padding: 30px;
+    }
     span {
       margin: 0 4px;
     }
   }
+  @media (max-width: 1180px) {
+    width: 100%;
+    .nav {
+      box-sizing: border-box;
+      padding: 30px;
+    }
+  }
 `;
 const DesWrapper = styled.div`
-  padding: 30px 0;
+  padding: 30px;
   margin: 0 30px;
   background: rgba(246, 243, 242, 0.7);
   text-align: center;
