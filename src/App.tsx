@@ -9,6 +9,7 @@ import BrandPage from "./pages/BrandPage";
 import Shop from "./pages/Shop";
 import Story from "./pages/ServiceSection/Story";
 import History from "./pages/ServiceSection/History";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/BrandPage" element={<BrandPage />}></Route>
         {/* 브랜드*/}
         <Route path="/Shop" element={<Shop />}></Route>
+        <Route path="/*" element={<ErrorPage />}></Route>
         {/* 샵 */}
       </Routes>
       <Footer />
